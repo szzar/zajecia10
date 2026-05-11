@@ -113,6 +113,11 @@ class Manager:
         -------
             float: Total costs for a given apartment.
 
+        Example:
+        -------
+            >>> manager = Manager()
+            >>> manager.get_apartment_costs(apartment_key="apt-1", year = 2023, month = 4)
+
         """
         if month is not None and (month < 1 or month > 12):
             raise ValueError("Month must be between 1 and 12")
@@ -145,6 +150,11 @@ class Manager:
         Returns:
         -------
             ApartmentSettlement: Object containing financial summary for a specified apartment in a given month and year.
+
+        Example:
+        -------
+            >>> manager = Manager()
+            >>> manager.get_settlement(apartment_key="apt-1", year=2023, month=3)
 
         """
         if month < 1 or month > 12:
@@ -215,6 +225,11 @@ class Manager:
         -------
             list[str]: List of debtor names.
 
+        Example:
+        -------
+            >>> manager = Manager()
+            >>> manager.get_debtors(apartment_key="apt-1", year=2024, month=3)
+
 
         """
         if month < 1 or month > 12:
@@ -254,6 +269,11 @@ class Manager:
         -------
             float: The tax amount based on total income from transfers.
 
+        Example:
+        -------
+            >>> manager = Manager()
+            >>> manager.calculate_tax(year=2023, month=1, tax_rate=0.23)
+
         """
         total_income = sum(
             transfer.amount_pln
@@ -287,6 +307,11 @@ class Manager:
         Returns:
         -------
             float: The annual balance based on transfers and bills.
+
+        Example:
+        -------
+            >>> manager = Manager()
+            >>> manager.get_annual_balance(year=2024)
 
         """
         total_income = sum(
