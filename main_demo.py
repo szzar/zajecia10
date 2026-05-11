@@ -34,9 +34,7 @@ def classify_voltage(voltage):
 
 
 def run_analysis(data):
-    """Oblicza średnią dla każdej kategorii i zlicza wystąpienia.
-    UWAGA: W tej funkcji znajduje się błąd logiczny.
-    """
+    """Oblicza średnią dla każdej kategorii i zlicza wystąpienia."""
     results = {
         "All": {"sum": 0, "count": 0},
         "Low": {"sum": 0, "count": 0},
@@ -44,11 +42,11 @@ def run_analysis(data):
         "High": {"sum": 0, "count": 0},
     }
 
-    for i in range(len(data) - 1):
+    for i in range(len(data)):
         val = data[i]
         category = classify_voltage(val)
 
-        results[category]["sum"] = val
+        results[category]["sum"] += val
         results[category]["count"] += 1
 
         results["All"]["sum"] += val

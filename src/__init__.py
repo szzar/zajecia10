@@ -45,5 +45,6 @@ Highlights
 Authors
 ------
 Łukasz Kułacz - initial implementation, testing, documentation
+Wiktoria Muszyńska - the student messing things up
 
 """

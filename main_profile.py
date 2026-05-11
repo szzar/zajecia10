@@ -1,7 +1,7 @@
 import random
 
 
-def slow_processing(data_size=10000):
+def slow_processing(data_size=10000):  # zajmuje najdluzej
     items = list(range(data_size))
     to_find = [random.randint(0, data_size * 2) for _ in range(5000)]
 
